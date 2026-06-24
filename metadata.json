@@ -1,0 +1,6 @@
+{
+  "name": "kairos.ai",
+  "description": "An immersive, myth-themed AI productivity companion. Outrun Time Itself with active task agents, a visual Time Debt Meter, the emergency 10-Minute Save mode, and post-deadline Autopsy reports.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,70 @@
+{
+  "entities": {
+    "Task": {
+      "title": "Task",
+      "description": "A task with optional subtasks and blockers",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "deadline": { "type": "string" },
+        "estimatedHours": { "type": "number" },
+        "timeSpentHours": { "type": "number" },
+        "status": { "type": "string" },
+        "priority": { "type": "string" },
+        "subtasks": { "type": "array" },
+        "blockerId": { "type": "string" },
+        "procrastinationCount": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "title", "status", "priority", "createdAt"]
+    },
+    "Blocker": {
+      "title": "Blocker",
+      "description": "An issue blocking a task with a prepared message",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "taskTitle": { "type": "string" },
+        "blockedOnName": { "type": "string" },
+        "reason": { "type": "string" },
+        "draftedMessage": { "type": "string" },
+        "resolved": { "type": "boolean" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "taskTitle", "blockedOnName", "reason", "draftedMessage", "resolved", "createdAt"]
+    },
+    "Autopsy": {
+      "title": "Autopsy",
+      "description": "Post-mortem analysis of missed deadlines",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "taskTitle": { "type": "string" },
+        "deadline": { "type": "string" },
+        "failureReason": { "type": "string" },
+        "actionableCommitment": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "taskTitle", "deadline", "failureReason", "actionableCommitment", "createdAt"]
+    }
+  },
+  "firestore": {
+    "tasks/{taskId}": {
+      "schema": "Task",
+      "description": "Collection of tasks"
+    },
+    "blockers/{blockerId}": {
+      "schema": "Blocker",
+      "description": "Collection of blockers"
+    },
+    "autopsies/{autopsyId}": {
+      "schema": "Autopsy",
+      "description": "Collection of autopsies"
+    }
+  }
+}

@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@200,300,400,500,600,700,900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "General Sans", "Inter", system-ui, sans-serif;
+  --font-display: "General Sans", "Inter", system-ui, sans-serif;
+  --font-nohemi: "General Sans", "Inter", system-ui, sans-serif;
+  --font-mono: "General Sans", "Inter", system-ui, sans-serif;
+  
+  --color-limeaccent: var(--limeaccent);
+  --color-limeaccent-hover: var(--limeaccent-hover);
+
+  --animate-scythe-swing: scytheSwing 2.5s ease-in-out infinite alternate;
+  --animate-glow-pulse: glowPulse 2s ease-in-out infinite;
+}
+
+@keyframes scytheSwing {
+  0% { transform: rotate(-15deg); }
+  100% { transform: rotate(45deg); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { filter: drop-shadow(0 0 2px var(--limeaccent-alpha-40)); }
+  50% { filter: drop-shadow(0 0 12px var(--limeaccent-alpha-80)); }
+}
+
+/* Redefined variables for Dark Cybernetic Theme with WebGL Background */
+:root {
+  --limeaccent: #5227FF; /* Staggered Menu Purple/Blue */
+  --limeaccent-hover: #7351FF;
+  --limeaccent-alpha-40: rgba(82, 39, 255, 0.4);
+  --limeaccent-alpha-80: rgba(82, 39, 255, 0.8);
+  --bg-main: transparent; /* WebGL background is visible */
+  --bg-card: rgba(0, 0, 0, 0.45); /* Highly translucent dark glass background */
+  --border-color: rgba(255, 255, 255, 0.25); /* Thin crisp white glass border */
+  --text-primary: #ffffff; /* High contrast white */
+  --text-muted: #e4e4e7; /* High visibility zinc-200 white */
+  --bg-grid-color: rgba(82, 39, 255, 0.05);
+}
+
+.dark-theme {
+  --limeaccent: #5227FF;
+  --limeaccent-hover: #7351FF;
+  --limeaccent-alpha-40: rgba(82, 39, 255, 0.4);
+  --limeaccent-alpha-80: rgba(82, 39, 255, 0.8);
+  --bg-main: transparent;
+  --bg-card: rgba(0, 0, 0, 0.45);
+  --border-color: rgba(255, 255, 255, 0.25);
+  --text-primary: #ffffff;
+  --text-muted: #e4e4e7;
+  --bg-grid-color: rgba(82, 39, 255, 0.05);
+}
+
+/* Custom background grid matrix styling */
+.bg-grid-pattern {
+  background-size: 55px 55px;
+  background-image: linear-gradient(to right, var(--bg-grid-color) 1px, transparent 1px),
+                    linear-gradient(to bottom, var(--bg-grid-color) 1px, transparent 1px);
+}
+
+.scythe-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Google-Inspired Overrides based on Theme Class */
+.theme-container {
+  background-color: var(--bg-main) !important;
+  color: var(--text-primary) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Apply variables to containers and components dynamically */
+.theme-container .bg-zinc-950,
+.theme-container .bg-zinc-950\/10,
+.theme-container .bg-zinc-950\/20,
+.theme-container .bg-zinc-950\/60,
+.theme-container .bg-zinc-950\/75,
+.theme-container .bg-zinc-950\/80,
+.theme-container .bg-zinc-950\/95,
+.theme-container .bg-zinc-900,
+.theme-container .bg-zinc-900\/40,
+.theme-container .bg-zinc-900\/80,
+.theme-container .bg-black,
+.theme-container .bg-black\/40,
+.theme-container .bg-black\/50,
+.theme-container .bg-black\/80 {
+  background-color: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  backdrop-filter: blur(12px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(140%) !important;
+}
+
+.theme-container .border,
+.theme-container .border-zinc-950,
+.theme-container .border-zinc-900,
+.theme-container .border-zinc-850,
+.theme-container .border-zinc-800,
+.theme-container .border-zinc-750,
+.theme-container .border-zinc-700,
+.theme-container .border-zinc-600,
+.theme-container .border-zinc-500,
+.theme-container .border-zinc-400,
+.theme-container .border-zinc-300,
+.theme-container .border-neutral-950,
+.theme-container .border-neutral-900,
+.theme-container .border-neutral-800,
+.theme-container .border-neutral-700,
+.theme-container .border-gray-950,
+.theme-container .border-gray-900,
+.theme-container .border-gray-800,
+.theme-container .border-gray-700,
+.theme-container .border-slate-950,
+.theme-container .border-slate-900,
+.theme-container .border-slate-800,
+.theme-container .border-slate-700,
+.theme-container .border-white\/5,
+.theme-container .border-white\/10,
+.theme-container .border-white\/15,
+.theme-container .border-white\/20,
+.theme-container .border-zinc-900\/40,
+.theme-container .border-zinc-900\/60,
+.theme-container .border-zinc-800\/60,
+.theme-container .border-purple-800\/40,
+.theme-container .border-purple-500\/40 {
+  border-color: var(--border-color) !important;
+}
+
+.theme-container .text-white,
+.theme-container .text-zinc-50,
+.theme-container .text-zinc-100,
+.theme-container .text-zinc-150,
+.theme-container .text-zinc-200,
+.theme-container .text-zinc-250,
+.theme-container .text-zinc-300,
+.theme-container .text-zinc-350 {
+  color: var(--text-primary) !important;
+}
+
+.theme-container .text-zinc-400,
+.theme-container .text-zinc-500,
+.theme-container .text-zinc-550,
+.theme-container .text-zinc-600 {
+  color: var(--text-muted) !important;
+}
+
+/* Google Buttons and Badges styling */
+.btn-google-primary {
+  background-color: var(--limeaccent) !important;
+  color: #ffffff !important;
+}
+.btn-google-primary:hover {
+  background-color: var(--limeaccent-hover) !important;
+}
+
+/* Custom indicator states */
+.theme-container .text-limeaccent {
+  color: var(--limeaccent) !important;
+}
+.theme-container .bg-limeaccent\/10 {
+  background-color: var(--limeaccent-alpha-40) !important;
+}
+.theme-container .border-limeaccent\/20,
+.theme-container .border-limeaccent\/30 {
+  border-color: var(--limeaccent) !important;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--limeaccent);
+}
+
+.card-swap-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(5%, 20%);
+  transform-origin: bottom right;
+
+  perspective: 900px;
+  overflow: visible;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 12px;
+  border: 1px solid #fff;
+  background: #000;
+
+  transform-style: preserve-3d;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@media (max-width: 768px) {
+  .card-swap-container {
+    transform: scale(0.75) translate(25%, 25%);
+  }
+}
+
+@media (max-width: 480px) {
+  .card-swap-container {
+    transform: scale(0.55) translate(25%, 25%);
+  }
+}
+
