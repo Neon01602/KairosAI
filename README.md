@@ -230,7 +230,7 @@ All AI endpoints include graceful fallback responses when the Gemini API is unav
 B.Tech CSE (AI) — Babu Banarasi Das University, Lucknow (2027)
 Co-founder, FounderOS | IEEE Student Branch Event Coordinator
 
-[![Documentation](https://docs.google.com/document/d/1uxT14lXQtUidF39QBB01-Zf6dRIwb7zAVE8xAeDN3bw/edit?usp=sharing)
+Documentation : (https://docs.google.com/document/d/1uxT14lXQtUidF39QBB01-Zf6dRIwb7zAVE8xAeDN3bw/edit?usp=sharing)
 [![GitHub](https://img.shields.io/badge/GitHub-Neon01602-181717?style=flat&logo=github)](https://github.com/Neon01602)
 
 ---
